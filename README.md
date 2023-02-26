@@ -1,78 +1,77 @@
-### Вешаем Pingpub в облако на статику
+### We hang Pingpub in the cloud for static
 
-- Форкаем/синхронизируем [репо Pingpub](https://github.com/ping-pub/explorer)
+- Fork/sync [Pingpub repo](https://github.com/ping-pub/explorer)
 
-- Регистрируемся на [Vercel](https://vercel.com/signup) (желательно сразу через GitHub)
+- Register on [Vercel](https://vercel.com/signup) (preferably immediately via GitHub)
 
-- Создаем новый проект
-
+- Create a new project
   ![223740](assets/223740.png)
   
-- Импортируем проект (наш форк)
+- Import the project (our fork)
 
   ![224442](assets/224442.png)
 
-- Авторизуем доступ Netlify к GitHub аккаунту
+- Authorize Netlify access to GitHub account
 
-- Выбираем наш форк
+- Choose our fork
 
   ![224803](assets/224803.png)
 
-- Версель автоматически определяет среду для деплоя (Vue.js). Настройки импорта оставляем по умолчанию
+- Vercel automatically detects deployment environment (Vue.js). Leave the import settings as default
 
   ![224851](assets/224851.png)
 
-- Деплоим
+- Deployment
 
-  Процесс сборки занимает 4-5 минут. Можно посмотреть deploy log
+The assembly process takes 4-5 minutes. You can see the deploy log
 
   ![225441](assets/225441.png)
 
-- Дожидаемся вот такого:
+We are waiting for this:
 
   ![225923](assets/225923.png)
 
-- Возвращаемся в овервью и видим что эксплорер развернут. Переходим по ссылке
+- We return to the overview and see that the explorer is deployed. Let's follow the link
 
   ![230108](assets/230108.png)
 
-- Готово
+- Done
 
   ![230231](assets/230231.png)
 
-### Штрихуем
+### We hatch
 
 ![230354](assets/230354.png)
 
-- Получаем человечью ссылку
+- Getting a human link
 
   ![230516](assets/230516.png)
 
-- Либо при наличии домена подключаем его
+- Or, if there is a domain, we connect it
 
   ![230626](assets/230626.png)
 
-- Вносим требуемые изменения в DNS
+- We make the required changes to the DNS
 
   ![230734](assets/230734.png)
 
-### Косметика и прочее
+### Cosmetics and more
 
-Здесь надо отметить, что Vercel будет автоматически ребилдить каждый коммит в вашем форке, что не всегда целесообразно, особенно при первоначальной настройке. Вследствии этого все манипуляции по удалению\добавлению сетей, замены лого, ссылок и прочего лучше производить на локале. Я использую [GitHub Desktop](https://desktop.github.com/). Клонируем форк и допиливаем все что надо. Ссылки приведены на основной репозиторий, кореллируем со своим форком:
+It should be noted here that Vercel will automatically rebuild every commit in your fork, which is not always advisable, especially during initial setup. As a result, all manipulations to remove / add networks, replace the logo, links, and other things are best done locally. I am using [GitHub Desktop](https://desktop.github.com/). We clone the fork and finish everything we need. Links are given to the main repository, we correlate with our fork:
 
-- Лого загружаем [сюда](https://github.com/ping-pub/explorer/tree/master/public)
+- Logo loading [here](https://github.com/ping-pub/explorer/tree/master/public)
 
-- Заголовок страницы меняем [здесь](https://github.com/ping-pub/explorer/blob/master/public/index.html#L16)
+- Changing the title of the page [Here](https://github.com/ping-pub/explorer/blob/master/public/index.html#L16)
 
-- Заголовок в навигации меняем [здесь](https://github.com/ping-pub/explorer/blob/master/themeConfig.js#L12). Здесь же смотрим остальные параметры, скин, анимацию и т.д.
+- Change title in navigation [Here](https://github.com/ping-pub/explorer/blob/master/themeConfig.js#L12). Здесь же смотрим остальные параметры, скин, анимацию и т.д.
 
-- Заголовок главной страницы меняем [здесь](https://github.com/ping-pub/explorer/blob/master/src/views/Home.vue#L10)
+- Changing the title of the main page [Here](https://github.com/ping-pub/explorer/blob/master/src/views/Home.vue#L10)
 
-- Ставим свои [ссылки на социалки](https://github.com/ping-pub/explorer/blob/master/src/navigation/vertical/index.js)
+- We put our [social media links](https://github.com/ping-pub/explorer/blob/master/src/navigation/vertical/index.js)
 
-- Очищаем каталоги `src/chains/mainnet` и `src/chains/testnet` и загружаем туда конфиги своих сетей.
+- We clean the `src/chains/mainnet` and `src/chains/testnet` directories and load our network configs there.
 
-- Коммитим все изменения на десктопе разом, Netlify автоматически сбилдит коммит, никаких доп. движений не требуется
+- We commit all the changes on the desktop at once, Netlify will automatically rebuild the commit, no additional steps. no movement required
 
   
 
